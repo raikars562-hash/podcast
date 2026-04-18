@@ -1,0 +1,134 @@
+.keyboard-help-trigger {
+  position: fixed;
+  bottom: 100px;
+  right: 80px;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.keyboard-help-trigger:hover {
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+  background: var(--bg-hover);
+}
+
+.keyboard-help-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.2s ease;
+}
+
+.keyboard-help-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-elevated);
+  animation: fadeUp 0.3s ease both;
+}
+
+.keyboard-help-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.keyboard-help-modal__header h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.keyboard-help-modal__header button {
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.keyboard-help-modal__header button:hover { color: var(--text-primary); }
+
+.keyboard-help-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.keyboard-help-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.keyboard-help-list li:hover { background: var(--bg-elevated); }
+
+.keyboard-help-action {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.keyboard-help-keys {
+  display: flex;
+  gap: 4px;
+}
+
+kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 26px;
+  padding: 0 8px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-medium);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.keyboard-help-footer {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.keyboard-help-footer kbd {
+  font-size: 10px;
+  min-width: 22px;
+  height: 20px;
+}
+
+@media (max-width: 640px) {
+  .keyboard-help-trigger { display: none; }
+}

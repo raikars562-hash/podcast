@@ -1,0 +1,134 @@
+/* ===== SPINNER ===== */
+.spinner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.spinner-wrap--sm .spinner { width: 32px; height: 32px; }
+.spinner-wrap--md .spinner { width: 48px; height: 48px; }
+.spinner-wrap--lg .spinner { width: 64px; height: 64px; }
+
+.spinner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--border-subtle);
+  border-top-color: var(--accent-primary);
+  animation: spin 0.8s linear infinite;
+}
+
+.spinner__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.spinner__label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Page loader */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+/* ===== SKELETONS ===== */
+@keyframes shimmerAnim {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-elevated) 25%,
+    var(--bg-hover) 50%,
+    var(--bg-elevated) 75%
+  );
+  background-size: 800px 100%;
+  animation: shimmerAnim 1.4s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* Card skeleton */
+.skeleton-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.skeleton--artwork {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0;
+}
+
+.skeleton-card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skeleton--title  { height: 16px; width: 75%; }
+.skeleton--subtitle { height: 12px; width: 50%; }
+.skeleton--text   { height: 12px; width: 90%; }
+.skeleton--text.short { width: 60%; }
+.skeleton--label  { height: 10px; width: 40%; }
+
+.skeleton-card__row {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.skeleton--tag {
+  height: 22px;
+  width: 52px;
+  border-radius: var(--radius-full);
+}
+
+/* Episode skeleton */
+.skeleton-episode {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.skeleton--thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.skeleton-episode__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
