@@ -45,7 +45,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/discover" element={<Discover />} />
-        <Route path="/trending" element={<Trendin />} />
+        <Route path="/trending" element={<Trending />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/podcast/:id" element={<PodcastDetail />} />
         <Route path="/episodes" element={<Episodes />} />
